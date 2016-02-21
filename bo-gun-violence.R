@@ -17,9 +17,9 @@ base_url <- "http://www.americanrhetoric.com/barackobamaspeeches.htm"
 ele      <- "td+ td a , tr+ tr td:nth-child(1) font"
 
 # get html, extract elements, return text
-titles     <- title_link %>% 
+titles     <- base_url %>% 
   read_html %>% 
-  html_nodes(title_ele) %>% 
+  html_nodes(ele) %>% 
   html_text
 
 # remove newlines & tabs, blank lines, etc.
